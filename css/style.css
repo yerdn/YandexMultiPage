@@ -1,0 +1,77 @@
+#mosMap {
+	width: 100%;
+	min-height: 500px;
+	margin-bottom: 10px;
+}
+
+
+img {
+	display: block;
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+  	height: auto;
+}
+
+#next {
+	background-image:url(../images/yandex-maps-logo.png);
+	background-repeat: no-repeat;
+	background-size: 40px auto;
+	background-origin:padding-box; 
+	padding-left: 10%;
+	width:120px;
+	height:40px;
+	border: 0;
+}
+
+/* company name animation */
+.company-name {
+	font: 12em/1 Arial;
+}
+
+svg {
+  display: block;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 7% 28%;
+  stroke-width: 10px;
+  -webkit-animation: stroke-offset 1s linear forwards;
+          animation: stroke-offset 1s linear forwards;
+}
+.text-copy:nth-child(1) {
+  stroke: #360745;
+  stroke-dashoffset: 7%;
+}
+.text-copy:nth-child(2) {
+  stroke: #D61C59;
+  stroke-dashoffset: 14%;
+}
+.text-copy:nth-child(3) {
+  stroke: #E7D84B;
+  stroke-dashoffset: 21%;
+}
+.text-copy:nth-child(4) {
+  stroke: #EFEAC5;
+  stroke-dashoffset: 28%;
+}
+.text-copy:nth-child(5) {
+  stroke: #1B8798;
+  stroke-dashoffset: 35%;
+}
+
+@-webkit-keyframes stroke-offset {
+  0% {
+    stroke-dashoffset: 35%;
+    stroke-dasharray: 0 87.5%;
+  }
+}
+
+@keyframes stroke-offset {
+  0% {
+    stroke-dashoffset: 35%;
+    stroke-dasharray: 0 87.5%;
+  }
+}

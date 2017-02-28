@@ -1,16 +1,21 @@
 #mosMap {
 	width: 100%;
-	min-height: 500px;
-	margin-bottom: 10px;
+	min-height: 420px;
+	margin-bottom: 5px;
 }
 
+.start-page {
+	text-align: center;
+}
 
-img {
+.logo img {
 	display: block;
     max-width: 50%;
     max-height: 50%;
     width: auto;
   	height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #next {
@@ -74,4 +79,17 @@ svg {
     stroke-dashoffset: 35%;
     stroke-dasharray: 0 87.5%;
   }
+}
+
+.navigation-buttons {
+	text-align: center;
+}
+
+.ui-btn {
+	margin: 3px;
+	// font-size: 16px;
+}
+
+.ui-btn.active {
+	background-color: rgba(0, 0, 0, 0.3);
 }

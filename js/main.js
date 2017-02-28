@@ -39,7 +39,8 @@
     	        moscowMap = new ymaps.Map("mosMap", {
     	            center: yandexCoords,
     	            zoom: 12,
-    	            type: 'yandex#hybrid'
+    	            type: 'yandex#hybrid',
+    	            controls: []
     	        });
     	        console.log("Initialization complete");
     	        
@@ -92,5 +93,72 @@
     	
     }
     
+    activateButton = function(active) {
+    	$('.map-type').removeClass('active');
+    	$(active).addClass('active');
+    }
+    
     $("#create-route").bind({click: createRoute});
+    
+    $("#type-map").bind({click: function(){
+    	activateButton(this);
+    	moscowMap.setType('yandex#map');
+    }});
+    $("#type-satellite").bind({click: function(){
+    	activateButton(this);
+    	moscowMap.setType('yandex#satellite');
+    }});
+    $("#type-hybrid").bind({click: function(){
+    	activateButton(this);
+    	moscowMap.setType('yandex#hybrid');
+    }});
+    
+    $("#current-location").bind({click: function(){
+    	console.log("Finding current location...");
+    	
+    	var options = {enableHighAccuracy: false, maximumAge: 0, timeout: 10000};
+
+    	function successCallback(position)
+    	{
+    		var currentCoords = [position.coords.latitude, position.coords.longitude];
+    		console.log("Current Location: ", currentCoords);
+    		
+    		moscowMap.setCenter(currentCoords);
+    		
+    		var placemark = new ymaps.Placemark(currentCoords, {
+    			balloonContentBody: 'My Current Location'
+	        }, {
+	            preset: "islands#blueCircleIcon",
+	        });
+	        moscowMap.geoObjects.add(placemark);
+    	}
+
+    	function errorCallback(error)
+    	{
+    		console.log("ERROR(" + error.code + "): "+ error.message);
+    		alert("Couldn't find current location: " + error.message);
+    	}
+
+    	navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options);
+    }});
+    
+    var actualProvider;
+    $("#traffic").bind({click: function() {
+    	var text = $(this).text();
+    	console.log("Clicked " + text);
+    	if(!actualProvider) {
+    	// Creating a "Now" traffic provider with the layer of information points enabled.
+    		actualProvider = new ymaps.traffic.provider.Actual({}, { infoLayerShown: true });
+    	}
+    	
+    	if(text === 'Show Traffic') {
+    		// And then adding it to the map.
+            actualProvider.setMap(moscowMap);
+            $(this).text('Hide Traffic');
+    	} else {
+            actualProvider.setMap(null);
+    		$(this).text('Show Traffic');
+    	}
+    }});
+    
 } () );

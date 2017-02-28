@@ -26,25 +26,27 @@
 		</div><!-- /header -->
 
 		<div class="ui-content">
-			<div class="company-name">
-				<svg viewBox="0 0 1200 300">
-					<symbol id="s-text">
-						<text text-anchor="middle" x="50%" y="68%" class="text--line">
-							Company
-						</text>
-					</symbol>
-				
-					<g class="g-ants">
-						<use xlink:href="#s-text" class="text-copy"/>     
-						<use xlink:href="#s-text" class="text-copy"/>     
-						<use xlink:href="#s-text" class="text-copy"/>     
-						<use xlink:href="#s-text" class="text-copy"/>     
-						<use xlink:href="#s-text" class="text-copy"/>     
-					</g>
-				</svg>
+			<div class="start-page">
+				<div class="company-name">
+					<svg viewBox="0 0 1200 300">
+						<symbol id="s-text">
+							<text text-anchor="middle" x="50%" y="68%" class="text--line">
+								Company
+							</text>
+						</symbol>
+					
+						<g class="g-ants">
+							<use xlink:href="#s-text" class="text-copy"/>     
+							<use xlink:href="#s-text" class="text-copy"/>     
+							<use xlink:href="#s-text" class="text-copy"/>     
+							<use xlink:href="#s-text" class="text-copy"/>     
+							<use xlink:href="#s-text" class="text-copy"/>     
+						</g>
+					</svg>
+				</div>
+				<div class="logo"><img alt="Yandex logo" src="./images/yandex-logo.png"></div>
+				<div><a id="next" href="#map-page" class="ui-btn ui-inline">Next</a></div>
 			</div>
-			<div class="logo"><img alt="Yandex logo" src="./images/yandex-logo.png"></div>
-			<div><a id="next" href="#map-page" class="ui-btn ui-inline">Next</a></div>
 		</div><!-- /content -->
 	</div><!-- /page one -->
 
@@ -58,9 +60,15 @@
 		<div class="ui-content">
 			<!-- <h2>Two</h2> -->
 			<div id="mosMap"></div>
-			<div class="<navigation-buttons></navigation-buttons>">
+			<div class="navigation-buttons">
 				<a id="back" href="#welcome-page" class="ui-btn ui-inline">Back</a>
-				<span id="create-route" class="ui-btn ui-inline">Create route</span>
+				<span id="traffic" class="ui-btn ui-inline">Show Traffic</span><br/>
+				<span id="type-map" class="ui-btn ui-inline map-type">Roadmap</span>
+				<span id="type-satellite" class="ui-btn ui-inline map-type">Satellite</span>
+				<span id="type-hybrid" class="ui-btn ui-inline map-type active">Hybrid</span>
+				<span id="current-location" class="ui-btn ui-inline">Current Location</span>
+				<!-- <span id="current-location" class="ui-btn ui-inline"><img alt="Current Location" src="./images/current-location.png"></span> -->
+				<span id="create-route" class="ui-btn ui-inline">Create Route</span>
 			</div>
 		</div><!-- /content -->
 	</div><!-- /page two -->

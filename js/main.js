@@ -1,4 +1,4 @@
-( function () {
+//( function () {
 	var moscowMap = undefined;
 	
 	removeMap = function() {
@@ -28,7 +28,7 @@
     
     //Yandex map
     console.log("Loading yandex maps API...");
-    ymaps.ready(init);
+    //ymaps.ready(init);
     var yandexCoords = [55.734152, 37.587904];
 
     function init() {
@@ -161,4 +161,4 @@
     	}
     }});
     
-} () );
+//} () );
